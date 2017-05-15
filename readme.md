@@ -1,4 +1,4 @@
-# Facebook Places
+# Facebook Events v0.1
 
 Inspired by https://github.com/tobilg/facebook-events-by-location-core
 
@@ -10,6 +10,16 @@ Run `yarn start`
 
 This is not a NPM module, so if you want to use it in you project you can just copy the `fb-events-es6` folder (if you're using ES6) or the `fb-events-es5` folder if you're using ES5  inside your project and then import it however you want (require/import)...
 
+
+#### The Object: eventOptions
+This object accepts 5 parameters:
+- lat: latitude of the current position
+- lon: longitude of the current position
+- dist: radius of the search (I think it's in Km but meh)
+- limit: limit of locations to search events. This is actually not the final number of events as facebook api might return locations without events.
+- filter: if false, return the list of ALL the nearby locations, independently of the events they might have. If true it returns the list of the nearby events, with the location of the event in a field called `venue`
+
+This means this simple code can also work to find the nearby Facebook locations, not just the events 👍
 
 ### Examples
 
